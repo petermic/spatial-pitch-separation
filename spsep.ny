@@ -21,18 +21,18 @@
 (defun lowpass-cutoff (center rolloff)
   (let*
     (
-      (decades-to-3db (/ -0.0 rolloff))
+      (octaves-to-3db (/ -0.0 rolloff))
     )
-    (* center (power 10.0 decades-to-3db))
+    (* center (power 2.0 octaves-to-3db))
   )
 )
 
 (defun highpass-cutoff (center rolloff)
   (let*
     (
-      (decades-to-3db (/ 0.0 rolloff))
+      (octaves-to-3db (/ 0.0 rolloff))
     )
-    (* center (power 10.0 decades-to-3db))
+    (* center (power 2.0 octaves-to-3db))
   )
 )
 
